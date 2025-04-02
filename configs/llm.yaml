@@ -1,0 +1,28 @@
+# Mistral 7B Configuration
+model:
+  name: "mistral-7b-instruct"
+  model_path: ""
+  device: "cuda"  # or "cpu" if no GPU available
+  torch_dtype: "float16"  # float16/float32/bfloat16
+
+# Generation Parameters
+generation:
+  max_new_tokens: 1024
+  temperature: 0.0  # Set to 0 for deterministic output
+  top_p: 1.0
+  top_k: 50
+  repetition_penalty: 1.1
+  eos_token_id: 2  # Mistral's EOS token ID
+
+# Log Processing
+log_processing:
+  max_log_length: 8192  # Mistral supports long context
+  remove_timestamps: true
+  remove_hex: true
+  min_log_words: 3
+
+
+# Integration Options
+integration:
+  use_graph_sage: true  # Whether to use GraphSAGE predictions
+  graph_model_path: "./best_sage_model.pth"

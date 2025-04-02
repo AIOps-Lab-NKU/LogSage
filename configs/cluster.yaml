@@ -1,0 +1,13 @@
+ # configs/cluster.yaml
+clustering:
+  algorithm: OPTICS      
+  params:
+    min_samples: 5       
+    xi: 0.05
+    min_cluster_size: 10
+
+feature:
+  tfidf:
+    max_features: 1000   
+  temporal:
+    window_size: 5s     
